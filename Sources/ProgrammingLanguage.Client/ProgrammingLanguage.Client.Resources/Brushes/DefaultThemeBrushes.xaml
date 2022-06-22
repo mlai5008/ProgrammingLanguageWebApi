@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Colors/DefaultThemeColors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--General-->
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
+    <SolidColorBrush x:Key="DangerBrush15" Color="{StaticResource DangerColor}" Opacity="0.15"/>
+    <SolidColorBrush x:Key="DangerBrush30" Color="{StaticResource DangerColor}" Opacity="0.30"/>
+    <SolidColorBrush x:Key="SecondaryDangerBrush" Color="{StaticResource SecondaryDangerColor}"/>
+    <SolidColorBrush x:Key="ThirdDangerBrush" Color="{StaticResource ThirdDangerColor}"/>
+    <SolidColorBrush x:Key="MainBlackBrush" Color="{StaticResource MainBlackColor}"/>
+    <SolidColorBrush x:Key="MainLightBrush" Color="{StaticResource MainLightColor}"/>
+    <SolidColorBrush x:Key="MainLightBrush5" Color="{StaticResource MainLightColor}" Opacity="0.05"/>
+    <SolidColorBrush x:Key="MainLightBrush25" Color="{StaticResource MainLightColor}" Opacity="0.25"/>
+    <SolidColorBrush x:Key="MainTransparentBrush" Color="{StaticResource MainTransparentColor}"/>
+    <SolidColorBrush x:Key="MainBackGroundBrush" Color="{StaticResource MainBackGroundColor}"/>
+    <SolidColorBrush x:Key="PrimaryDarkBrush" Color="{StaticResource PrimaryDarkColor}"/>
+    <SolidColorBrush x:Key="PrimaryDarkBrush50" Color="{StaticResource PrimaryDarkColor}" Opacity="0.5"/>
+    <SolidColorBrush x:Key="PrimaryDarkBrush75" Color="{StaticResource PrimaryDarkColor}" Opacity="0.75"/>
+    <SolidColorBrush x:Key="PrimaryMediumBrush" Color="{StaticResource PrimaryMediumColor}"/>
+    <SolidColorBrush x:Key="PrimaryMediumBrush75" Color="{StaticResource PrimaryMediumColor}" Opacity="0.75"/>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}"/>
+    <SolidColorBrush x:Key="PrimaryUltraLightBrush" Color="{StaticResource PrimaryUltraLightColor}"/>
+    <SolidColorBrush x:Key="SecondaryDarkBrush" Color="{StaticResource SecondaryDarkColor}"/>
+    <SolidColorBrush x:Key="ThirdDarkBrush" Color="{StaticResource ThirdDarkColor}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
+    <SolidColorBrush x:Key="SecondaryBrush12" Color="{StaticResource SecondaryColor}" Opacity="0.12"/>
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="SecondarySuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="SecondarySuccessBrush30" Color="{StaticResource SuccessColor}" Opacity="0.30"/>
+    <SolidColorBrush x:Key="ThirdSuccessBrush" Color="{StaticResource ThirdSuccessColor}"/>
+    <SolidColorBrush x:Key="MessageBrush" Color="{StaticResource MessageColor}"/>
+    <SolidColorBrush x:Key="ApplyBrush" Color="{StaticResource ApplyColor}"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+    <SolidColorBrush x:Key="WarningBrush15" Color="{StaticResource WarningColor}" Opacity="0.15"/>
+    <SolidColorBrush x:Key="WarningBrush30" Color="{StaticResource WarningColor}" Opacity="0.30"/>
+    <SolidColorBrush x:Key="SecondaryWarningBrush" Color="{StaticResource SecondaryWarningColor}"/>
+    <SolidColorBrush x:Key="NotDefinedBrush" Color="{StaticResource NotDefinedColor}"/>
+</ResourceDictionary>

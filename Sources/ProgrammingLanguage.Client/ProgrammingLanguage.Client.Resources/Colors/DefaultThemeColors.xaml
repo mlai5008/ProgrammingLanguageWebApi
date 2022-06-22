@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Colors of defautl theme-->
+    <Color x:Key="DangerColor">#FD452B</Color>
+    <Color x:Key="SecondaryDangerColor">#FC6A45</Color>
+    <Color x:Key="ThirdDangerColor">#462A26</Color>
+    <Color x:Key="MainBlackColor">#000000</Color>
+    <Color x:Key="MainLightColor">#FFFFFF</Color>
+    <Color x:Key="MainTransparentColor">Transparent</Color>
+    <Color x:Key="MainBackGroundColor">#272727</Color>
+    <Color x:Key="PrimaryDarkColor">#313131</Color>
+    <Color x:Key="PrimaryMediumColor">#474747</Color>
+    <Color x:Key="PrimaryColor">#606060</Color>
+    <Color x:Key="PrimaryLightColor">#7D7D7D</Color>
+    <Color x:Key="PrimaryUltraLightColor">#DFDFDF</Color>
+    <Color x:Key="SecondaryDarkColor">#5E581C</Color>
+    <Color x:Key="ThirdDarkColor">#4D4A25</Color>
+    <Color x:Key="SecondaryColor">#F7DE00</Color>
+    <Color x:Key="ButtonHoverColor">#D9C61B</Color>
+    <Color x:Key="SuccessColor">#21EB45</Color>
+    <Color x:Key="SecondarySuccessColor">#58E46F</Color>
+    <Color x:Key="ThirdSuccessColor">#28432D</Color>
+    <Color x:Key="MessageColor">#BBFE9F</Color>
+    <Color x:Key="ApplyColor">#06B546</Color>
+    <Color x:Key="WarningColor">#FF994B</Color>
+    <Color x:Key="SecondaryWarningColor">#443225</Color>
+    <Color x:Key="NotDefinedColor">#414141</Color>
+</ResourceDictionary>

@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ProgrammingLanguage.Client.Resources">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Colors/DefaultThemeColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/DefaultThemeBrushes.xaml"/>
+        <ResourceDictionary Source="../Icons/Icons.xaml"/>
+        <ResourceDictionary Source="../Styles/DefaultThemeStyles.xaml"/>
+        <ResourceDictionary Source="../Effects/DefaultThemeEffects.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

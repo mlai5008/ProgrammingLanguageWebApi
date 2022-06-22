@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--Window-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/Window/WindowStyles.xaml"/>
+        <!--Button-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/Button/ButtonStyles.xaml"/>
+        <!--Label-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/Label/LabelStyles.xaml"/>
+        <!--TextBlock-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/TextBlock/TextBlockStyles.xaml"/>
+        <!--TextBox-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/TextBox/TextBoxStyles.xaml"/>
+        <!--Thumb-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/Thumb/ThumbStyles.xaml"/>
+        <!--ScrollBar-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/ScrollBar/ScrollBarStyles.xaml"/>
+        <!--ScrollViewer-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/ScrollViewer/ScrollViewerStyles.xaml"/>
+        <!--DataGrid-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/DataGrid/DataGridStyles.xaml"/>
+        <!--DataGridRow-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/DataGridRow/DataGridRowStyles.xaml"/>
+        <!--DataGridCell-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/DataGridCell/DataGridCellStyles.xaml"/>
+        <!--SpinnerControl-->
+        <ResourceDictionary Source="DefaultThemeStyles/Controls/SpinnerControl/SpinnerControlStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

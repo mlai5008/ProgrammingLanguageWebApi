@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="ProgrammingLanguage.Client.Views.EditProgrammingLanguageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProgrammingLanguage.Client.Views"
+             mc:Ignorable="d" 
+             Height="300" Width="600"
+             xmlns:customControls="clr-namespace:ProgrammingLanguage.Client.Resources.CustomControls;assembly=ProgrammingLanguage.Client.Resources"
+             xmlns:converters="clr-namespace:ProgrammingLanguage.Client.Resources.Converters;assembly=ProgrammingLanguage.Client.Resources"
+             xmlns:const="clr-namespace:ProgrammingLanguage.Client.Infrastructure.Constants;assembly=ProgrammingLanguage.Client.Infrastructure"
+             xmlns:iconKeys="clr-namespace:ProgrammingLanguage.Client.Resources.Icons;assembly=ProgrammingLanguage.Client.Resources">
+
+    <UserControl.Resources>
+        <converters:InvertibleBooleanToVisibilityConverter x:Key="InvertibleBooleanToVisibilityConverter"/>
+        <converters:InvertibleBooleanToIsEnabledConverter x:Key="InvertibleBooleanToIsEnabledConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border Visibility="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToVisibilityConverter},ConverterParameter=Inverted}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Images-->
+                    <Grid Grid.Column="0"
+                          Grid.Row="0"
+                          Grid.RowSpan="2"
+                          Margin="10">
+                        <Border BorderThickness="2"
+                                Margin="10"
+                                BorderBrush="{DynamicResource PrimaryDarkBrush}"
+                                CornerRadius="8">
+                            <Image Grid.Column="1"
+                               Width="150"
+                               Height="150"
+                               VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch"
+                               Source="{Binding Icon}"/>
+                        </Border>
+                        <Border HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource PrimaryBrush}"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Height="40"
+                                Width="40">
+                            <Button Command="{Binding EditPhotoCommand}"
+                                    Style="{DynamicResource Style_Button_PrimaryWithImageWithoutText}"
+                                    Tag="{x:Static iconKeys:IconKey.EditSmall}"/>
+                        </Border>
+                    </Grid>
+
+                    <!--Name-->
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0 5 0 0">
+                        <TextBlock Style="{DynamicResource Style_TextBlock_Base}"
+                                       FontSize="14"
+                                       Text="{x:Static const:LabelKeyConstants.Name}"
+                                       Foreground="{DynamicResource PrimaryUltraLightBrush}"
+                                       FontWeight="Bold"/>
+                        <customControls:TextBoxControl Style="{DynamicResource Style_TextBox_Primary}"
+                                                       Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                                       Width="180"
+                                                       FontSize="14"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left"
+                                                       MaxLength="20"
+                                                       Margin="0 5 0 0"
+                                                       IsEnabled="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToIsEnabledConverter}, ConverterParameter=Inverted}"/>
+                    </StackPanel>
+
+                    <!--Description-->
+                    <StackPanel Grid.Column="1"
+                                Grid.Row="1">
+                        <TextBlock Style="{DynamicResource Style_TextBlock_Base}"
+                                   FontSize="14"
+                                   Text="{x:Static const:LabelKeyConstants.DescriptionLabel}"
+                                   Foreground="{DynamicResource PrimaryUltraLightBrush}"
+                                   Margin="0 0 0 5"
+                                   FontWeight="Bold"/>
+                        <customControls:TextBoxControl Style="{DynamicResource Style_TextBox_Primary}"
+                                                       Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                                                       Width="370"
+                                                       Height="125"
+                                                       VerticalScrollBarVisibility="Auto"
+                                                       VerticalAlignment="Bottom"
+                                                       HorizontalAlignment="Left"
+                                                       IsEnabled="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToIsEnabledConverter}, ConverterParameter=Inverted}"
+                                                       TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Style="{DynamicResource Style_TextBlock_Base}"
+                           Foreground="{DynamicResource SecondaryDangerBrush}"
+                           FontSize="14"
+                           Text="{Binding ValidationHint}"
+                           TextWrapping="WrapWithOverflow"
+                           Margin="20 8 0 0"/>
+                
+                <!--SaveButton-->
+                <Button Grid.Row="2"
+                        HorizontalAlignment="Right"
+                        Style="{DynamicResource Style_Button_PrimaryWithImage}"
+                        Margin="0 10 5 5"
+                        Content="{x:Static const:ControlTitleConstants.SaveTitle}"
+                        Command="{Binding Path=SaveCommand}"
+                        FontSize="16"
+                        Height="40"
+                        Width="110"/>
+            </Grid>
+        </Border>
+        <customControls:SpinnerControl Style="{DynamicResource Style_SpinnerControl_Base}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"
+                                       Height="100"
+                                       Width="300"
+                                       Visibility="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToVisibilityConverter},ConverterParameter=Normal}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DropShadowEffect x:Key="Effect_Button_ShadowBase"
+                      ShadowDepth="0"
+                      BlurRadius="2"
+                      Opacity="0.15"
+                      Color="{DynamicResource PrimaryMediumColor}"/>
+
+    <DropShadowEffect x:Key="Effect_DialogWindow_ShadowBase"
+                      ShadowDepth="0"
+                      BlurRadius="8"
+                      Direction="0"
+                      Opacity="0.12"
+                      Color="{DynamicResource MainBlackColor}"/>
+</ResourceDictionary>

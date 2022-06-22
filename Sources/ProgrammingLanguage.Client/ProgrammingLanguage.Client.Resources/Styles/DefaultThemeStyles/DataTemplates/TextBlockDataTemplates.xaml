@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="DTemplate_TextBlock_WatermarkTextBox">
+        <TextBlock Name="txtbl_Watermark"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource PrimaryUltraLightBrush}"
+                   Text="{Binding}"/>
+        <DataTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="txtbl_Watermark" Property="Foreground" Value="{DynamicResource PrimaryLifhtBrush}"/>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+</ResourceDictionary>

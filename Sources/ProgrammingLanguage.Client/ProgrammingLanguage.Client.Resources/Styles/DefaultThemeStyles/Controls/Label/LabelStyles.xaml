@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:ProgrammingLanguage.Client.Resources.Converters">
+
+    <converters:IconKeyToControlTemplateConverter x:Key="IconKeyToControlTemplateConverter"/>
+
+    <Style x:Key="Style_Label_ImageBase" TargetType="Label">
+        <Setter Property="Template" Value="{Binding Path=Tag, 
+                                                    RelativeSource={RelativeSource Self}, 
+                                                    Converter={StaticResource IconKeyToControlTemplateConverter}}" />
+    </Style>
+</ResourceDictionary>

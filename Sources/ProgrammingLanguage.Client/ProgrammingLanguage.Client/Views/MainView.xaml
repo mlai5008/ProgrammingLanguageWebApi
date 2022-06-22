@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="ProgrammingLanguage.Client.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProgrammingLanguage.Client.Views"
+             xmlns:customControls="clr-namespace:ProgrammingLanguage.Client.Resources.CustomControls;assembly=ProgrammingLanguage.Client.Resources"
+             xmlns:converters="clr-namespace:ProgrammingLanguage.Client.Resources.Converters;assembly=ProgrammingLanguage.Client.Resources"
+             xmlns:const="clr-namespace:ProgrammingLanguage.Client.Infrastructure.Constants;assembly=ProgrammingLanguage.Client.Infrastructure"
+             xmlns:iw="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:iconKeys="clr-namespace:ProgrammingLanguage.Client.Resources.Icons;assembly=ProgrammingLanguage.Client.Resources"
+             mc:Ignorable="d" 
+             Height="815" Width="700">
+
+    <UserControl.Resources>
+        <converters:InvertibleBooleanToVisibilityConverter x:Key="InvertibleBooleanToVisibilityConverter"/>
+        <converters:InvertibleBooleanToIsEnabledConverter x:Key="InvertibleBooleanToIsEnabledConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid Visibility="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToVisibilityConverter},ConverterParameter=Inverted}">
+            <Border Background="{DynamicResource PrimaryDarkBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="DataGrid"
+                              VerticalAlignment="Top"
+                              VerticalScrollBarVisibility="Auto"
+                              ItemsSource="{Binding SearchableCollection}"
+                              SelectedItem="{Binding SelectedProgrammingLanguage, Mode=TwoWay}"
+                              AutoGenerateColumns="False"
+                              HeadersVisibility="None"
+                              VirtualizingPanel.ScrollUnit="Pixel"
+                              SelectionMode="Extended"
+                              IsReadOnly="True"
+                              GridLinesVisibility="None">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Icon}"
+                                               Height="100"
+                                               Width="100"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="{Binding Name}"
+                                                       FontWeight="Bold"
+                                                       Style="{DynamicResource Style_TextBlock_Base}"
+                                                       Foreground="{DynamicResource PrimaryUltraLightBrush}"
+                                                       FontSize="16"
+                                                       Margin="5 0 0 0"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Row="1"
+                                                       Text="{Binding Description}"
+                                                       TextWrapping="Wrap"
+                                                       Margin="0 0 15 0"
+                                                       Style="{DynamicResource Style_TextBlock_Base}"
+                                                       FontSize="13"
+                                                       Foreground="{DynamicResource PrimaryUltraLightBrush}"/>
+                                            
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="1"
+                                HorizontalAlignment="Right">
+                        <Button Style="{DynamicResource Style_Button_PrimaryWithImage}"
+                                Margin="0 10 0 10"
+                                Content="{x:Static const:ControlTitleConstants.AddTitle}"
+                                Command="{Binding Path=AddProgrammingLanguageCommand}"
+                                FontSize="16"
+                                Height="40"
+                                Width="100"/>
+                        <Button Style="{DynamicResource Style_Button_PrimaryWithImage}"
+                                Margin="10 10 0 10"
+                                Content="{x:Static const:ControlTitleConstants.EditTitle}"
+                                Command="{Binding Path=EditProgrammingLanguageCommand}"
+                                FontSize="16"
+                                Height="40"
+                                Width="100"/>
+                        <Button Style="{DynamicResource Style_Button_PrimaryWithImage}"
+                                Margin="10"
+                                Content="{x:Static const:ControlTitleConstants.DeleteTitle}"
+                                Command="{Binding Path=MultiDeleteProgrammingLanguageCommand}"
+                                CommandParameter="{Binding ElementName=DataGrid, Path=SelectedItems}"
+                                FontSize="16"
+                                Height="40"
+                                Width="100"/>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <customControls:SpinnerControl Style="{DynamicResource Style_SpinnerControl_Base}"
+                                       Text="{Binding LoadingInformation}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"
+                                       Height="100"
+                                       Width="300"
+                                       Visibility="{Binding IsBusy, Converter={StaticResource InvertibleBooleanToVisibilityConverter},ConverterParameter=Normal}"/>
+    </Grid>
+</UserControl>

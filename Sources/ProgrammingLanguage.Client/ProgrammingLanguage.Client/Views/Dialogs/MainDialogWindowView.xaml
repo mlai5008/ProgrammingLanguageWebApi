@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProgrammingLanguage.Client.Views.Dialogs.MainDialogWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgrammingLanguage.Client.Views.Dialogs"
+        mc:Ignorable="d"
+        Title="{Binding Path=Title, FallbackValue=Title, UpdateSourceTrigger=PropertyChanged}"
+        Height="450" Width="800"
+        Style="{DynamicResource Style_Window_Dialog}"
+        WindowStartupLocation="CenterOwner"
+        Effect="{DynamicResource Effect_DialogWindow_ShadowBase}"
+        ShowInTaskbar="False">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Alt" Key="F4" Command="{Binding Path=CancelCommand}" />
+    </Window.InputBindings>
+</Window>
